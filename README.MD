@@ -14,20 +14,20 @@ Windows10 + python3 + ffmpeg
 
 此处已Android为例，B站的缓存文件一般存放在 \Android\data\tv.danmaku.bili\download 这样的路径下，照着这个路径应该就能找到，然后连跟数据线，直接把download里面所有文件搬到电脑上。
 
-![image](/images/20210920041247.png)
+![image](https://aeolustf.github.io/2021/09/20/Bilibili-Video-Conversion-Tool/20210920041247.png)
 
 每一个文件夹下面是相应种类视频的分p：
 
-![image](/images/20210920042336.png)
+![image](https://aeolustf.github.io/2021/09/20/Bilibili-Video-Conversion-Tool/20210920042336.png)
 
 现有的缓存文件看起来有些混乱，得整理一下：
 里面文件存放的方式居然有两种，一种是比较新的：
 
-![image](/images/20210920042447.png)
+![image](https://aeolustf.github.io/2021/09/20/Bilibili-Video-Conversion-Tool/20210920042447.png)
 
 还有一种比较老的：
 
-![image](/images/20210920041826.png)
+![image](https://aeolustf.github.io/2021/09/20/Bilibili-Video-Conversion-Tool/20210920041826.png)
 
 新的把音视频分开了，最里面的video.m4s 和 audio.m4s两个文件就是我要的 ，看样子要把两个文件混流才行，而老的却是把视频分段了，直接拼起来就行了。
 
@@ -52,21 +52,21 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 ```
 python3 Bilibili-Conversion-Old.py
 ```
-![image](/images/20210920041623.png)
+![image](https://aeolustf.github.io/2021/09/20/Bilibili-Video-Conversion-Tool/20210920041623.png)
 
-![image](/images/20210920042025.png)
+![image](https://aeolustf.github.io/2021/09/20/Bilibili-Video-Conversion-Tool/20210920042025.png)
 
 ### 新的使用：
 ```
 python3 Bilibili-Conversion-New.py
 ```
-![image](/images/20210920050131.png)
+![image](https://aeolustf.github.io/2021/09/20/Bilibili-Video-Conversion-Tool/20210920050131.png)
 
-![image](/images/20210920052647.png)
+![image](https://aeolustf.github.io/2021/09/20/Bilibili-Video-Conversion-Tool/20210920052647.png)
 
 ### 重点：在使用前，无论新、老，请修改源码中的路径！！！
 
-![image](/images/20210920045026.png)
+![image](https://aeolustf.github.io/2021/09/20/Bilibili-Video-Conversion-Tool/20210920045026.png)
 
 
 ***
