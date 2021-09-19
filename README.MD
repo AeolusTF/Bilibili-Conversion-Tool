@@ -12,7 +12,7 @@ Windows10 + python3 + ffmpeg
 
 ## 使用
 
-此处==已Android为例==，B站的缓存文件一般存放在 ==\Android\data\tv.danmaku.bili\download== 这样的路径下，照着这个路径应该就能找到，然后连跟数据线，直接把==download==里面所有文件搬到电脑上。
+此处已Android为例，B站的缓存文件一般存放在 \Android\data\tv.danmaku.bili\download 这样的路径下，照着这个路径应该就能找到，然后连跟数据线，直接把download里面所有文件搬到电脑上。
 
 ![image](/images/20210920041247.png)
 
@@ -29,25 +29,25 @@ Windows10 + python3 + ffmpeg
 
 ![image](/images/20210920041826.png)
 
-新的把音视频分开了，最里面的==video.m4s 和 audio.m4s==两个文件就是我要的 ，看样子要把两个文件混流才行，而老的却是把视频分段了，直接拼起来就行了。
+新的把音视频分开了，最里面的video.m4s 和 audio.m4s两个文件就是我要的 ，看样子要把两个文件混流才行，而老的却是把视频分段了，直接拼起来就行了。
 
 最简单粗暴的操作，考虑到格式工厂之类的音视频编辑软件，但是后缀名不对还识别不了，而且那么多的文件，一个个去操作实在愚蠢，于是考虑写个程序，让它自动去跑。
 
 这里使用的环境为windows10+python3.8，要实现这样的功能，python有一个现成的轮子，叫moviepy，不过这个库有许多问题，而且在拼接的时候速度极为缓慢，于是干脆直接用ffmpeg
 
-==没有ffmpeg的，直接去官网下载，或者打开 powershell，输入以下命令安装：==
+没有ffmpeg的，直接去官网下载，或者打开 powershell，输入以下命令安装：
 
 ```
 choco install ffmpeg
 ```
 
-==提示没有choco命令的，打开 powershell 复制以下命令安装choco，再安装ffmpeg：==
+提示没有choco命令的，打开 powershell 复制以下命令安装choco，再安装ffmpeg：
 
 ```
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 
-### 根据上述新、老识别方法，==老的使用：==
+### 根据上述新、老识别方法，老的使用：
 
 ```
 python3 Bilibili-Conversion-Old.py
@@ -56,7 +56,7 @@ python3 Bilibili-Conversion-Old.py
 
 ![image](/images/20210920042025.png)
 
-### ==新的使用：==
+### 新的使用：
 ```
 python3 Bilibili-Conversion-New.py
 ```
@@ -64,7 +64,7 @@ python3 Bilibili-Conversion-New.py
 
 ![image](/images/20210920052647.png)
 
-### ==重点：在使用前，无论新、老，请修改源码中的路径！！！==
+### 重点：在使用前，无论新、老，请修改源码中的路径！！！
 
 ![image](/images/20210920045026.png)
 
